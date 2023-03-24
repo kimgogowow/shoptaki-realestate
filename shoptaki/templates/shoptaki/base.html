@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	{% load static %}
+	<link href="{% static 'shoptaki/shoptaki.css' %}" rel="stylesheet" type="text/css">
+	<title> {% block title %} Shoptaki {% endblock %} </title>
+</head>
+
+<body>
+	<div class="parent">
+		<div id="id_header_div">
+			<div id="id_site_name">
+				<h1>
+					shoptaki
+				</h1>
+			</div>
+			<div class="navigator">
+				{% block navigation%}
+				{% endblock%}
+			</div>
+		</div>
+		<div class="mainpage">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</div>
+
+</body>
+
+</html>

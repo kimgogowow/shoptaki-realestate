@@ -1,0 +1,65 @@
+{% extends "socialnetwork/base.html" %}
+
+{% block navigation %}
+<div id="up">
+</div>
+<div id="down">
+    <a id="id_login_link" href="{% url 'login' %}">
+        Login
+    </a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div id="id_page_name">
+    Register
+</div>
+<div>
+    <form method="post" action="{% url 'register' %}">
+        <table>
+            {{form}}
+        </table>
+        {% csrf_token %}
+        <button class="button" id="id_register_button" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
+<!--
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/blog.css">
+
+</head>
+
+<body>
+    <div class="main">
+        <div id="id_header_div">
+            <div id="id_site_name">
+                <h1>BLOG MASTER</h1>
+            </div>
+            <div id="id_login_info">
+                <h2 id="id_page_link">Register</h2>
+                <label>User Name:</label><br>
+                <input id="id_username"><br>
+                <label>Password:</label><br>
+                <input id="id_password"><br>
+                <button id="id_login_button">Submit</button>
+            </div>
+            <div id="id_register_link">
+                <a href="">Login</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+-->
