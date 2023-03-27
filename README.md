@@ -11,7 +11,8 @@ Mar 27:
 1.home page+login page+register page
 
   user story:
-  1)the user will enter the home page once entered the website
+  
+              1)the user will enter the home page once entered the website
   
               2)the right top will show the 'login' link if the user is not login
               
