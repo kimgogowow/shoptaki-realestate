@@ -1,10 +1,18 @@
-Please put hw4 files in this directory.
-1) Andrew ID: yuchenw3
-2) Name: Yuchen Wu
-3) Homework: #4
-4) Andrew IDs of students that I consulted on this homework: None
-5) Andrew IDs of course staff that I consulted on this homework: Yumi
-6) Names of other people I consulted on this homework:None
-7) List of external sources I consulted when solving this homework:None
-8) Integrity Statement: I, Yuchen Wu, did not electronically copy any
-source code, in whole or in part, from any source, other than the course examples provided to me this semester, when preparing my solution for this homework assignment.
+A real estate listings website built with python django bootstrap.
+
+A simple, reponsive website. Built with:
+
+Python 🐍
+Django 
+
+
+process to track:
+Mar 27:
+1.home page+login page+register page
+
+  user story: 1)the user will enter the home page once entered the website
+              2)the right top will show the 'login' link if the user is not login
+              3)replace the login link if the user login done with his/her user avatar
+              4)new user can do registeration with the register button in the login page
+       
+  things to do further: the current avatar pic is limited to the fixed one, need to fix that later.
