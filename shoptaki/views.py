@@ -7,10 +7,11 @@ from django.contrib.auth import authenticate, login, logout
 from shoptaki.forms import LoginForm, RegisterForm
 
 # Create your views here.
-def home_page(request):
-    context = {}
-    if request.method == 'GET':
-        return render(request,'shoptaki/home.html',context)
+
+
+def home_view(request):
+    return render(request, 'shoptaki/home.html')
+
 
 def login_action(request):
     context = {}
@@ -18,7 +19,7 @@ def login_action(request):
         context['form'] = LoginForm()
         # once passed authentication--jump to global stream
         if request.user.is_authenticated:
-         
+
             return render(request, 'shoptaki/home.html', context)
         return render(request, 'shoptaki/login.html', context)
 
@@ -67,11 +68,8 @@ def logout_action(request):
     return redirect(reverse('login'))
 
 
-
 @login_required
 def user_profile_action(request):
     context = {}
     if request.method == "GET":
         return render(request, 'shoptaki/my_profile.html', context)
-
-
