@@ -20,10 +20,10 @@ from shoptaki import views
 
 urlpatterns = [
     path('',views.home_page,name="home"),
-    path('', views.login_action, name="login"),
+    path('login', views.login_action, name="login"),
     path('register', views.register_action, name="register"),
     path('logout', views.logout_action, name="logout"),
     path('my_profile', views.user_profile_action, name="my_profile"),
-
+    path('finder', views.property_action, name="finder"),
  
 ]

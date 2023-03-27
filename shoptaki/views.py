@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 # from django.utils import timezone
-from shoptaki.forms import LoginForm, RegisterForm
+from shoptaki.forms import LoginForm, RegisterForm, PropertyForm
 
 # Create your views here.
 def home_page(request):
@@ -59,6 +59,16 @@ def register_action(request):
 
     login(request, newUser)
     # update the global stream page
+    return redirect(reverse('home'))
+
+
+def property_action(request):
+    context = {}
+    if request.method == "GET":
+        return render(request, 'shoptaki/finder.html', context)
+    # obtain the input and render to the page
+    form = PropertyForm(request.POST)
+    context['form'] = form
     return redirect(reverse('home'))
 
 

@@ -50,3 +50,14 @@ class RegisterForm(forms.Form):
         if User.objects.filter(username__exact=username):
             raise forms.ValidationError("Username is already taken.")
         return username
+
+class PropertyForm(forms.Form):
+    cap_rate = forms.CharField(max_length=20)
+    loan_to_value = forms.CharField(max_length=20)
+    current_savings = forms.CharField(max_length=20)
+    interest_rate = forms.CharField(max_length=20)
+    amort_sched = forms.CharField(max_length=20)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        return cleaned_data
