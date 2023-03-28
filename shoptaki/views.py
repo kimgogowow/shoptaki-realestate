@@ -72,4 +72,22 @@ def logout_action(request):
 def user_profile_action(request):
     context = {}
     if request.method == "GET":
-        return render(request, 'shoptaki/my_profile.html', context)
+        return render(request, 'shoptaki/profile.html', context)
+
+
+def find_action(request):
+    context = {}
+    if request.method == "GET":
+        return render(request, 'shoptaki/finder.html', context)
+
+
+def user_settings_action(request):
+    context = {}
+    if request.method == "GET":
+        return render(request, 'shoptaki/settings.html', context)
+
+
+def check_favorites(request):
+    context = {}
+    if request.method == "GET":
+        return render(request, 'shoptaki/favorites.html', context)

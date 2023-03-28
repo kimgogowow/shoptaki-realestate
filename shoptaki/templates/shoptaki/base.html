@@ -16,11 +16,10 @@
 		</div>
 		<div class="nav-links">
 			<a href="{% url 'home' %}">Home</a>
-			<a href="{% url 'my_profile' %}">Profolio</a>
-			<a href="#">Data</a>
-			<a href="#">Profile</a>
-			<a href="#">Favorites</a>
-			<a href="#">Settings</a>
+			<a href="{% url 'finder' %}">Finder</a>
+			<a href="{% url 'profile' %}">Profile</a>
+			<a href="{% url 'favorites' %}">Favorites</a>
+			<a href="{% url 'settings' %}">Settings</a>
 		</div>
 
 
@@ -29,7 +28,7 @@
 			<img style="height:70px" src="static/image/suit.png">
 		</div>
 		{% else %}
-		<div id="login-link" >
+		<div id="login-link">
 			<a href="{% url 'login' %}">Login</a>
 		</div>
 		{% endif %}

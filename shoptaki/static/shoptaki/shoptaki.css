@@ -18,6 +18,7 @@ header {
     height: 100%;
     width: 100%;
     position: absolute;
+
     /*
     border-style: solid;
     border-width: 2px;
@@ -113,12 +114,15 @@ header {
 }
 
 .login_body,
-.register_body {
+.register_body,
+.finder_option_body {
     text-align: center;
+    margin-top: 100px;
 }
 
 .login_title,
-.register_title {
+.register_title,
+.finder_title {
     font-size: 50px;
     font-weight: 700;
 }
@@ -130,4 +134,21 @@ header {
     padding: 20px;
     font-size: 20px;
 
+}
+
+.property_options button {
+    width: 325px;
+    height: 173px;
+
+    mix-blend-mode: normal;
+    backdrop-filter: blur(2px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 70px;
+
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    background: #3C64B1;
 }
