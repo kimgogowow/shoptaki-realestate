@@ -21,3 +21,5 @@ Mar 27:
               4)new user can do registeration with the register button in the login page
        
   things to do further: the current avatar pic is limited to the fixed one, need to fix that later.
+  
+ 2.pages added except: finder 2+finder listing + present page
