@@ -103,6 +103,13 @@ def user_settings_action(request):
         return render(request, 'shoptaki/settings.html', context)
 
 
+
+def listings(request):
+    context = {}
+    if request.method == "GET":
+        return render(request, 'shoptaki/listings.html', context)
+
+
 def check_favorites(request):
     context = {}
     if request.method == "GET":
