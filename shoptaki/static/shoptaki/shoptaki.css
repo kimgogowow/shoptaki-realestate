@@ -109,6 +109,16 @@ header {
     margin-left: 100px;
 }
 
+#id_finder_button {
+
+    color: white;
+    font-size: 20px;
+    background: #3C64B1;
+    border-radius: 10%;
+    width: 200px;
+    height: 42px;
+}
+
 #login-link {
     margin-right: 100px;
 }
@@ -128,7 +138,8 @@ header {
 }
 
 .login_form,
-.register_form {
+.register_form,
+.finder_form{
     display: flex;
     justify-content: center;
     padding: 20px;
