@@ -13,6 +13,10 @@ def home_view(request):
     return render(request, 'shoptaki/home.html')
 
 
+def info_view(request):
+    return render(request, 'shoptaki/info.html')
+
+
 def login_action(request):
     context = {}
     if request.method == 'GET':

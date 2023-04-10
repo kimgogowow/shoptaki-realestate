@@ -113,12 +113,79 @@ header {
     margin-right: 100px;
 }
 
+.profile_body {
+
+    display: flex;
+
+
+    border-style: solid;
+    border-color: #0d0d0d;
+    border-width: 2px;
+}
+
+#profile_pic {
+    border-style: solid;
+    border-color: #0d0d0d;
+    border-width: 2px;
+
+    flex-grow: 1;
+    text-align: center;
+
+
+    max-width: 30%;
+    max-height: 100%;
+
+}
+
+#id_user_picture {
+    max-width: 100%;
+    height: auto;
+
+}
+
+#profile_info {
+    flex-grow: 3;
+
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+#profile_info div {
+    height: 40%;
+    border-style: solid;
+    border-color: #0d0d0d;
+    border-width: 2px;
+
+    padding: 20px;
+    margin: 20px;
+    flex-direction: column;
+
+}
+
+
+.info_body,
+.profile_body,
 .login_body,
 .register_body,
 .finder_option_body {
     text-align: center;
-    margin-top: 100px;
+    padding: 10%;
 }
+
+#info_program_intro,
+#info_tech_intro,
+#info_user_story {
+    width: 80%;
+    height: 500px;
+
+    margin-top: 10px;
+    border-style: solid;
+    border-color: #0d0d0d;
+    border-width: 2px;
+}
+
 
 .login_title,
 .register_title,

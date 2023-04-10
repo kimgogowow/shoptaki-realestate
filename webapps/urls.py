@@ -20,6 +20,7 @@ from shoptaki import views
 
 urlpatterns = [
     path('', views.home_view, name="home"),
+    path('info',views.info_view,name="info"),
     path('login', views.login_action, name="login"),
     path('register', views.register_action, name="register"),
     path('logout', views.logout_action, name="logout"),

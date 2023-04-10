@@ -21,3 +21,5 @@ Mar 27:
               4)new user can do registeration with the register button in the login page
        
   things to do further: the current avatar pic is limited to the fixed one, need to fix that later.
+
+  all the static images are currently saved in https://sm.ms/
