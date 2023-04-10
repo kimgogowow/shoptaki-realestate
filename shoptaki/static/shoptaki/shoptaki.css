@@ -174,17 +174,32 @@ header {
     padding: 10%;
 }
 
-#info_program_intro,
-#info_tech_intro,
-#info_user_story {
-    width: 80%;
-    height: 500px;
 
-    margin-top: 10px;
+#info_program_intro,
+#info_user_story {
+    text-align: left;
+    margin: 10px;
+    border-style: solid;
+    border-color: #0d0d0d;
+    border-width: 2px;
+    padding: 30px;
+}
+
+#info_tech_intro,
+#info_term_intro {
+
+    margin: 10px;
+    padding: 30px;
     border-style: solid;
     border-color: #0d0d0d;
     border-width: 2px;
 }
+
+#info_tech_intro img {
+    width: 80%;
+}
+
+
 
 
 .login_title,
