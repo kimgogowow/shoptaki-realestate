@@ -23,3 +23,5 @@ Mar 27:
   things to do further: the current avatar pic is limited to the fixed one, need to fix that later.
 
   all the static images are currently saved in https://sm.ms/
+  
+ 2.pages added except: finder 2+finder listing + present page
