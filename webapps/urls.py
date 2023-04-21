@@ -14,13 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from shoptaki import views
-
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.home_view, name="home"),
-    path('info',views.info_view,name="info"),
+    path('oauth/', include('social_django.urls', namespace='social')),
+   # path('logout', auth_views.logout_then_login, name='logout'),
+
+
+    path('info', views.info_view, name="info"),
     path('login', views.login_action, name="login"),
     path('register', views.register_action, name="register"),
     path('logout', views.logout_action, name="logout"),

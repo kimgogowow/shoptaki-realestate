@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 # from django.utils import timezone
 from shoptaki.forms import LoginForm, RegisterForm
-
+from django.conf import settings
 # Create your views here.
 
 
@@ -21,9 +21,9 @@ def login_action(request):
     context = {}
     if request.method == 'GET':
         context['form'] = LoginForm()
+        context['login_url'] = settings.LOGIN_URL
         # once passed authentication--jump to global stream
         if request.user.is_authenticated:
-
             return render(request, 'shoptaki/home.html', context)
         return render(request, 'shoptaki/login.html', context)
 
@@ -31,6 +31,7 @@ def login_action(request):
     context['form'] = form
 
     if not form.is_valid():
+        #context['error_msg'] = "invalid username or password"
         return render(request, 'shoptaki/login.html', context)
 
     newUser = authenticate(
@@ -66,7 +67,7 @@ def register_action(request):
     # update the global stream page
     return redirect(reverse('home'))
 
-
+@login_required
 def logout_action(request):
     logout(request)
     return redirect(reverse('login'))
