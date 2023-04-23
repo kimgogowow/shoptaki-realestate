@@ -28,9 +28,9 @@ urlpatterns = [
     path('login', views.login_action, name="login"),
     path('register', views.register_action, name="register"),
     path('logout', views.logout_action, name="logout"),
-    path('finder', views.find_action, name="finder"),
+    path('finder', views.finder_action, name="finder"),
     path('favorites', views.check_favorites, name="favorites"),
     path('profile', views.user_profile_action, name="profile"),
     path('settings', views.user_settings_action, name="settings"),
-
+    path('listings', views.listings, name="listings"),
 ]

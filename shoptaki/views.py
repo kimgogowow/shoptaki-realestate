@@ -4,8 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 # from django.utils import timezone
-from shoptaki.forms import LoginForm, RegisterForm
 from django.conf import settings
+from shoptaki.forms import LoginForm, RegisterForm, FinderForm
+
 # Create your views here.
 
 
@@ -73,6 +74,22 @@ def logout_action(request):
     return redirect(reverse('login'))
 
 
+def finder_action(request):
+    context = {}
+    if request.method == 'GET':
+        context['form'] = FinderForm()
+        # once passed authentication--jump to global stream
+        return render(request, 'shoptaki/finder.html', context)
+
+    form = FinderForm(request.POST)
+    context['form'] = form
+
+    if not form.is_valid():
+        return render(request, 'shoptaki/finder.html', context)
+    # update the global stream page
+    return redirect(reverse('home'))
+
+
 @login_required
 def user_profile_action(request):
     context = {}
@@ -90,6 +107,13 @@ def user_settings_action(request):
     context = {}
     if request.method == "GET":
         return render(request, 'shoptaki/settings.html', context)
+
+
+
+def listings(request):
+    context = {}
+    if request.method == "GET":
+        return render(request, 'shoptaki/listings.html', context)
 
 
 def check_favorites(request):

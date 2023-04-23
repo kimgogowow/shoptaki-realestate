@@ -19,6 +19,26 @@ class LoginForm(forms.Form):
 
         return cleaned_data
 
+class FinderForm(forms.Form):
+    cap_rate = forms.CharField(
+                max_length=20,
+                label="Cap Rate")
+    loan_to_value = forms.CharField(
+            max_length=20,
+            label="Loan To Value")
+    current_savings = forms.CharField(
+                max_length=20,
+                label="Current Savings")
+    interest_rate = forms.CharField(
+                    max_length=20,
+                    label="Interest Rate")
+    amort_sched = forms.CharField(
+                        max_length=20,
+                        label="Amortization Schedule")
+
+    def clean(self):
+        cleaned_data = super().clean()
+
 
 class RegisterForm(forms.Form):
     username = forms.CharField(max_length=20)
@@ -50,3 +70,5 @@ class RegisterForm(forms.Form):
         if User.objects.filter(username__exact=username):
             raise forms.ValidationError("Username is already taken.")
         return username
+
+

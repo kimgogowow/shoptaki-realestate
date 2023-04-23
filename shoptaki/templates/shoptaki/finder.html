@@ -2,20 +2,20 @@
 {% block content %}
 <div class="finder_option_body">
 
-    <h1 class=" finder_title">
-        Choose your property type :
-    </h1>
+    <h2 class=" finder_title">
+        Property Finder:
+    </h2>
 
     <div class="property_options">
-        <button>
-            Multi Family
-        </button>
-        <button>
-            Town House
-        </button>
-        <button>
-            Hotel
-        </button>
+        <div class="finder_form">
+            <form method="post" action="{% url 'finder' %}">
+                <table>
+                    {{form}}
+                </table>
+                {% csrf_token %}
+                <button class="button" id="id_finder_button" type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
 
