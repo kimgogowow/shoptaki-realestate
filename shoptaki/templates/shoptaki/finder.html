@@ -2,21 +2,25 @@
 {% block content %}
 <div class="finder_option_body">
 
+
+    <h1>you are looking for a {{type}} house</h1>
+
     <h2 class=" finder_title">
         Property Finder:
-    </h2>
 
-    <div class="property_options">
-        <div class="finder_form">
-            <form method="post" action="{% url 'finder' %}">
-                <table>
-                    {{form}}
-                </table>
-                {% csrf_token %}
-                <button class="button" id="id_finder_button" type="submit">Submit</button>
-            </form>
+        <h1>{{error}}</h1>
+
+        <div class="property_options">
+            <div class="finder_form">
+                <form method="post" action="{% url 'finder' %}">
+                    <table>
+                        {{form}}
+                    </table>
+                    {% csrf_token %}
+                    <button class="button" id="id_finder_button" type="submit">Submit</button>
+                </form>
+            </div>
         </div>
-    </div>
 </div>
 
 {% endblock %}

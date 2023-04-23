@@ -1,0 +1,30 @@
+{% extends "shoptaki/base.html" %}
+{% block content %}
+<div class="finder_option_body">
+
+    <h1 class=" finder_title">
+        Choose your property type :
+    </h1>
+
+    <div class="property_options">
+        <button onclick="redirectToTheFinder('Multi Family')">
+            Multi Family
+        </button>
+        <button onclick="redirectToTheFinder('Town House')">
+            Town House
+        </button>
+        <button onclick="redirectToTheFinder('Hotel')">
+            Hotel
+        </button>
+    </div>
+</div>
+
+<script>
+
+    function redirectToTheFinder(type) {
+        window.location.href = "{% url 'finder' %}?type=" + encodeURIComponent(type);
+    }
+
+</script>
+
+{% endblock %}

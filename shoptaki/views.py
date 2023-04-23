@@ -32,7 +32,7 @@ def login_action(request):
     context['form'] = form
 
     if not form.is_valid():
-        #context['error_msg'] = "invalid username or password"
+        # context['error_msg'] = "invalid username or password"
         return render(request, 'shoptaki/login.html', context)
 
     newUser = authenticate(
@@ -63,10 +63,10 @@ def register_action(request):
     newUser.save()
     newUser = authenticate(
         username=form.cleaned_data['username'], password=form.cleaned_data['password'])
-
     login(request, newUser)
     # update the global stream page
     return redirect(reverse('home'))
+
 
 @login_required
 def logout_action(request):
@@ -74,9 +74,18 @@ def logout_action(request):
     return redirect(reverse('login'))
 
 
+def finder_type_action(request):
+    context = {"type": request.POST}
+    if request.method == "GET":
+        return render(request, 'shoptaki/finder_type.html', context)
+
+
 def finder_action(request):
     context = {}
+
     if request.method == 'GET':
+        type = request.GET.get('type')
+        context = {'type': type}
         context['form'] = FinderForm()
         # once passed authentication--jump to global stream
         return render(request, 'shoptaki/finder.html', context)
@@ -85,9 +94,12 @@ def finder_action(request):
     context['form'] = form
 
     if not form.is_valid():
+        error = "Sorry Invalid Input"
+        context['error'] = error
         return render(request, 'shoptaki/finder.html', context)
     # update the global stream page
-    return redirect(reverse('home'))
+
+    return redirect(reverse('listings'))
 
 
 @login_required
@@ -97,17 +109,10 @@ def user_profile_action(request):
         return render(request, 'shoptaki/profile.html', context)
 
 
-def find_action(request):
-    context = {}
-    if request.method == "GET":
-        return render(request, 'shoptaki/finder.html', context)
-
-
 def user_settings_action(request):
     context = {}
     if request.method == "GET":
         return render(request, 'shoptaki/settings.html', context)
-
 
 
 def listings(request):
