@@ -1,0 +1,4 @@
+title,address,city,state,zipcode,description,price,bedrooms,bathrooms,garage,sqft,lot_size,is_published
+Cozy Cottage,123 Main St,Anytown,CA,12345,A charming little cottage,500000,2,1.5,0,1000,0.1,False
+Luxury Condo,456 1st Ave,Another City,MA,67890,A luxurious condo with all the amenities,1000000,3,2.5,2,2000,0.5,True
+Spacious Ranch,789 Oak St,Smallville,TX,54321,A spacious ranch with room for all your livestock,750000,4,2.5,2,3000,2.0,True

@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 # from django.utils import timezone
 from django.conf import settings
-from shoptaki.forms import LoginForm, RegisterForm, FinderForm
+from .forms import LoginForm, RegisterForm, FinderForm
+from .models import Listing
+from .listing import import_listings_from_csv
 
 # Create your views here.
 
@@ -115,9 +117,19 @@ def user_settings_action(request):
         return render(request, 'shoptaki/settings.html', context)
 
 
+
+# def listings(request):
+#     # context = {}
+#     if request.method == "GET":
+#         return render(request, 'shoptaki/listings.html', context)
+
 def listings(request):
     context = {}
     if request.method == "GET":
+        # Call import_listings_from_csv function to import listings from CSV
+        import_listings_from_csv('shoptaki/data/listings.csv')
+        listings = Listing.objects.all()
+        context['listings'] = listings
         return render(request, 'shoptaki/listings.html', context)
 
 
