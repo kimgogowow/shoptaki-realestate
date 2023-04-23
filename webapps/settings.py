@@ -79,17 +79,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
 
-import os
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-BASE_DIR_STR = str(BASE_DIR)
-
-# 数据库设置
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR_STR, 'db.sqlite3'),
     }
 }
 
