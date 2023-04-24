@@ -1,26 +1,28 @@
 {% extends "shoptaki/base.html" %}
 {% block content %}
-<div class="finder_option_body">
+<div class="finder_search_body">
 
 
-    <h1>you are looking for a {{type}} house</h1>
+    <h1>you are looking for a <a>{{type}}</a> house</h1>
 
     <h2 class=" finder_title">
-        Property Finder:
+        Property Finder:</h2>
 
-        <h1>{{error}}</h1>
+    <h1>{{error}}</h1>
 
-        <div class="property_options">
-            <div class="finder_form">
-                <form method="post" action="{% url 'finder' %}">
-                    <table>
-                        {{form}}
-                    </table>
-                    {% csrf_token %}
-                    <button class="button" id="id_finder_button" type="submit">Submit</button>
-                </form>
-            </div>
+    <div class="search_input">
+        <div class="finder_form">
+            <form method="post" action="{% url 'finder' %}">
+                <table>
+                    {{form}}
+                </table>
+                {% csrf_token %}
+                <br>
+
+                <button class="button" id="id_finder_button" type="submit">View Listings</button>
+            </form>
         </div>
+    </div>
 </div>
 
 {% endblock %}

@@ -76,6 +76,7 @@ def logout_action(request):
     return redirect(reverse('login'))
 
 
+@login_required
 def finder_type_action(request):
     context = {"type": request.POST}
     if request.method == "GET":
@@ -110,18 +111,11 @@ def user_profile_action(request):
     if request.method == "GET":
         return render(request, 'shoptaki/profile.html', context)
 
-
-def user_settings_action(request):
-    context = {}
-    if request.method == "GET":
-        return render(request, 'shoptaki/settings.html', context)
-
-
-
 # def listings(request):
 #     # context = {}
 #     if request.method == "GET":
 #         return render(request, 'shoptaki/listings.html', context)
+
 
 def listings(request):
     context = {}

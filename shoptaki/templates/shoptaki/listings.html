@@ -3,58 +3,70 @@
 {% block title %} | Browse Property Listings {% endblock %}
 
 {% block content %}
-<section id="showcase-inner" class="py-5 text-white">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h1 class="display-4">Browse Our Properties</h1>
-                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, pariatur!</p>
-            </div>
-        </div>
-    </div>
-</section>
+<br>
+
+<div>
+    <h1 id="listing_title">Browse Our Properties</h1>
+</div>
+
+
 
 <!-- Listings -->
 <section id="listings" class="py-4">
-    <div class="container">
+    <div class="listings_container">
         <div class="row">
             {% if listings %}
             {% for listing in listings %}
             <div class="col-md-6 col-lg-4 mb-4">
+
                 <div class="card listing-preview">
-                    <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
+                    <img class="card-img-top" src="https://s2.loli.net/2023/04/25/MdxktOQEqzVLvWF.png" alt="pics here">
+                    <!--
+<img class="card-img-top" src="{{ listing.photo_main.url }}" alt="pics here">
+                    -->
+
+
                     <div class="card-img-overlay">
                         <h2>
                             <span class="badge badge-secondary text-white">${{ listing.price}}</span>
                         </h2>
                     </div>
+
                     <div class="card-body">
                         <div class="listing-heading text-center">
                             <h4 class="text-primary">{{ listing.title }}</h4>
                             <p>
-                                <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}</p>
+                                <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }} {{ listing.state }},
+                                {{ listing.zipcode }}
+                            </p>
                         </div>
                         <hr>
                         <div class="row py-2 text-secondary">
                             <div class="col-6">
-                                <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}</div>
+                                <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}
+                            </div>
                             <div class="col-6">
-                                <i class="fas fa-car"></i> Garage: {{ listing.garage }}</div>
+                                <i class="fas fa-car"></i> Garage: {{ listing.garage }}
+                            </div>
                         </div>
                         <div class="row py-2 text-secondary">
                             <div class="col-6">
-                                <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
+                                <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}
+                            </div>
                             <div class="col-6">
-                                <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathrooms }}</div>
+                                <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathrooms }}
+                            </div>
                         </div>
                         <hr>
                         <div class="row py-2 text-secondary">
                             <div class="col-12">
-                                <i class="fas fa-user"></i> {{ listing.realtor }}</div>
+                                <i class="fas fa-user"></i> realtor:???{{ listing.realtor }}
+                            </div>
                         </div>
                         <div class="row text-secondary pb-2">
                             <div class="col-6">
-                                <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
+                                <i class="fas fa-clock"></i> date: and time since{{ listing.list_date | timesince }}
+                            </div>
                         </div>
                         <hr>
                     </div>
@@ -67,6 +79,9 @@
             </div>
             {% endif %}
         </div>
+
+
+
 
         <div class="row">
             <div class="col-md-12">

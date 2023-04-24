@@ -179,9 +179,36 @@ header {
 .profile_body,
 .login_body,
 .register_body,
-.finder_option_body {
+.finder_option_body,
+.finder_search_body {
     text-align: center;
     padding: 10%;
+}
+
+.finder_search_body {
+    text-align: center;
+    background-image: url("https://s2.loli.net/2023/04/25/MdxktOQEqzVLvWF.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.finder_search_body a {
+    color: #3C64B1;
+}
+
+.search_input {
+
+    padding: 1%;
+
+    border-style: solid;
+    border-width: 1px;
+    background: rgba(109, 148, 223, 0.8);
+    border-radius: 30px;
+
+}
+
+.finder_form label {
+    margin-top: 30%;
 }
 
 
@@ -209,19 +236,17 @@ header {
     width: 80%;
 }
 
-
-
-
 .login_title,
 .register_title,
 .finder_title {
+    text-align: center;
     font-size: 50px;
     font-weight: 700;
 }
 
 .login_form,
 .register_form,
-.finder_form{
+.finder_form {
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -246,8 +271,8 @@ header {
     background: #3C64B1;
 }
 
-.display-4 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    line-height: 1.2; }
 
+
+#listing_title {
+    text-align: center;
+}
