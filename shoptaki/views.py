@@ -117,6 +117,7 @@ def user_profile_action(request):
 #         return render(request, 'shoptaki/listings.html', context)
 
 
+@login_required
 def listings(request):
     context = {}
     if request.method == "GET":
