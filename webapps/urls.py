@@ -31,5 +31,5 @@ urlpatterns = [
     path('favorites', views.check_favorites, name="favorites"),
     path('profile', views.user_profile_action, name="profile"),
     path('settings', views.user_settings_action, name="settings"),
-    path('listings', views.listings, name="listings"),
+    path('listings', views.get_listings, name="listings"),
 ]

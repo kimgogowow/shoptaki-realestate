@@ -2,6 +2,9 @@ from django.db import models
 from datetime import datetime
 
 # Create your models here.
+
+
+
 class Listing(models.Model):
     title = models.CharField(max_length=200)
     address = models.CharField(max_length=200)

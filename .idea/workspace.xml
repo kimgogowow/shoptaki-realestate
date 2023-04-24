@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="" />
+    <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,24 +26,25 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Oq7oTTv2lnhFRt4tarOrTLJWLo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/simranvirdi/Desktop/shoptaki-realestate1/shoptaki/data",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/simranvirdi/Desktop/shoptaki-realestate1/shoptaki/data&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/shoptaki/data" />
@@ -171,6 +177,7 @@
       <workItem from="1682277644864" duration="97000" />
       <workItem from="1682277771503" duration="32000" />
       <workItem from="1682277829601" duration="5156000" />
+      <workItem from="1682369608942" duration="7089000" />
     </task>
     <servers />
   </component>

@@ -8,6 +8,7 @@ from django.conf import settings
 from .forms import LoginForm, RegisterForm, FinderForm
 from .models import Listing
 from .listing import import_listings_from_csv
+import requests
 
 # Create your views here.
 
@@ -137,3 +138,38 @@ def check_favorites(request):
     context = {}
     if request.method == "GET":
         return render(request, 'shoptaki/favorites.html', context)
+
+
+def get_listings(request):
+    Listing.objects.all().delete()
+    context={}
+    url = "https://zillow56.p.rapidapi.com/search"
+    querystring = {"location":"pittsburgh, pa","status":"forSale","isMultiFamily":"true"}
+    headers = {
+        "content-type": "application/octet-stream",
+        "X-RapidAPI-Key": "0376013f28msh9dfa0bf8473d107p1d88d2jsnc21f53b7bdca",
+        "X-RapidAPI-Host": "zillow56.p.rapidapi.com"
+    }
+    response = requests.get(url, headers=headers, params=querystring)
+    data = response.json()
+    listings = data['results']
+    for i in listings:
+        listing_data = Listing(
+        title = "a house bitch",
+        address = i['streetAddress'],
+        city = i['city'],
+        state = i['state'],
+        zipcode = i['zipcode'],
+        description = "some house betch",
+        price = i['price'],
+        bedrooms = i['bedrooms'],
+        bathrooms = i['bathrooms'],
+        sqft = i.get('livingArea', 0),
+        lot_size = i.get('lotAreaValue',0),
+        )
+
+        listing_data.save()
+    all_listings = Listing.objects.all()
+    context['listings'] = all_listings
+    return render(request, 'shoptaki/listings.html', context)
+
