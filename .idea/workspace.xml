@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoptaki/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoptaki/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/urls.py" afterDir="false" />
-    </list>
+    <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,7 +172,7 @@
       <workItem from="1682277644864" duration="97000" />
       <workItem from="1682277771503" duration="32000" />
       <workItem from="1682277829601" duration="5156000" />
-      <workItem from="1682369608942" duration="7089000" />
+      <workItem from="1682369608942" duration="7123000" />
     </task>
     <servers />
   </component>
