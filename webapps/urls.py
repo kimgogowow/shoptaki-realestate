@@ -30,5 +30,7 @@ urlpatterns = [
     path('finder', views.finder_action, name="finder"),
     path('favorites', views.check_favorites, name="favorites"),
     path('profile', views.user_profile_action, name="profile"),
-    path('listings', views.listings, name="listings"),
+    path('settings', views.user_settings_action, name="settings"),
+    path('listings', views.get_listings, name="listings"),
+    path('refresh_listings', views.refresh_listings, name="refresh_listings"),#API CALL USE SPARINGLY
 ]
