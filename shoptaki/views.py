@@ -140,7 +140,8 @@ def check_favorites(request):
         return render(request, 'shoptaki/favorites.html', context)
 
 
-def get_listings(request):
+def refresh_listings(request):
+    #USED TO CALL API DO NOT CALL UNLESS NEED TO REFRESH WE ONLY HAVE SO MANY PULLS
     Listing.objects.all().delete()
     context={}
     url = "https://zillow56.p.rapidapi.com/search"
@@ -155,21 +156,30 @@ def get_listings(request):
     listings = data['results']
     for i in listings:
         listing_data = Listing(
-        title = "a house bitch",
-        address = i['streetAddress'],
-        city = i['city'],
-        state = i['state'],
-        zipcode = i['zipcode'],
-        description = "some house betch",
-        price = i['price'],
-        bedrooms = i['bedrooms'],
-        bathrooms = i['bathrooms'],
-        sqft = i.get('livingArea', 0),
-        lot_size = i.get('lotAreaValue',0),
+        address = i.get('streetAddress', "NA"),
+        city = i.get('city', "NA"),
+        state = i.get('state', "NA"),
+        zipcode = i.get('zipcode', "NA"),
+        price = i.get('price', -1),
+        bedrooms = i.get('bedrooms', -1),
+        bathrooms = i.get('bathrooms', -1),
+        sqft = i.get('livingArea', -1),
+        lot_size = i.get('lotAreaValue',-1),
+        days_listed = i.get('daysOnZillow', -1),
+        longitude = i.get('longitude', -1),
+        latitude = i.get('latitude', -1),
+        img = i.get('imgSrc', ""),
+        rent_estimate = i.get('rentZestimate', -1)
         )
 
         listing_data.save()
     all_listings = Listing.objects.all()
     context['listings'] = all_listings
     return render(request, 'shoptaki/listings.html', context)
+def get_listings(request):
+    context={}
+    all_listings = Listing.objects.all()
+    context['listings'] = all_listings
+    return render(request, 'shoptaki/listings.html', context)
+
 

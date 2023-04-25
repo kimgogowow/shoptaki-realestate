@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="" />
+    <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/urls.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,6 +144,21 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="shoptaki-realestate" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
       <module name="shoptaki-realestate1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -173,6 +193,7 @@
       <workItem from="1682277771503" duration="32000" />
       <workItem from="1682277829601" duration="5156000" />
       <workItem from="1682369608942" duration="7123000" />
+      <workItem from="1682450357632" duration="2583000" />
     </task>
     <servers />
   </component>
