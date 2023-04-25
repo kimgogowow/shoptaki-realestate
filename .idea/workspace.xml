@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoptaki/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +191,7 @@
       <workItem from="1682277829601" duration="5156000" />
       <workItem from="1682369608942" duration="7123000" />
       <workItem from="1682450357632" duration="2610000" />
-      <workItem from="1682462456853" duration="417000" />
+      <workItem from="1682462456853" duration="855000" />
     </task>
     <servers />
   </component>
