@@ -9,6 +9,7 @@ from .forms import LoginForm, RegisterForm, FinderForm
 from .models import Listing
 from .listing import import_listings_from_csv
 import requests
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 
@@ -127,6 +128,14 @@ def listings(request):
         listings = Listing.objects.all()
         context['listings'] = listings
         return render(request, 'shoptaki/listings.html', context)
+
+
+def listing(request, listing_address):
+    context = {}
+    if request.method == "GET":
+        listing = get_object_or_404(Listing, address=listing_address)
+        context['listing'] = listing
+        return render(request, 'shoptaki/listing.html', context)
 
 
 def check_favorites(request):

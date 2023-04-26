@@ -9,8 +9,6 @@
     <h1 id="listing_title">Browse Our Properties</h1>
 </div>
 
-
-
 <!-- Listings -->
 <section id="listings" class="py-4">
     <div class="listings_container">
@@ -21,10 +19,6 @@
 
                 <div class="card listing-preview">
                     <img class="card-img-top" src="https://s2.loli.net/2023/04/25/MdxktOQEqzVLvWF.png" alt="pics here">
-                    <!--
-<img class="card-img-top" src="{{ listing.photo_main.url }}" alt="pics here">
-                    -->
-
 
                     <div class="card-img-overlay">
                         <h2>
@@ -69,6 +63,7 @@
                             </div>
                         </div>
                         <hr>
+                        <a href="{% url 'listing' listing.address %}" class="btn btn-primary btn-block">More Info</a>
                     </div>
                 </div>
             </div>
