@@ -23,3 +23,13 @@ class Listing(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Analytics(models.Model):
+    cap_rate = models.IntegerField()
+    loan_to_value = models.IntegerField()
+    current_savings = models.IntegerField()
+    interest_rate = models.IntegerField()
+    amort_sched = models.IntegerField()
+    def __str__(self):
+        return self.title

@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 # from django.utils import timezone
 from django.conf import settings
 from .forms import LoginForm, RegisterForm, FinderForm
-from .models import Listing
+from .models import Listing, Analytics
 from .listing import import_listings_from_csv
 import requests
 from django.shortcuts import get_object_or_404, render
@@ -139,7 +139,9 @@ def listing(request, listing_address):
     context = {}
     if request.method == "GET":
         listing = get_object_or_404(Listing, address=listing_address)
+        analytics = Analytics.objects.first()
         context['listing'] = listing
+        context['analytics'] = analytics
         return render(request, 'shoptaki/listing.html', context)
 
 
@@ -186,14 +188,8 @@ def refresh_listings(request):
     return render(request, 'shoptaki/listings.html', context)
 
 
-def get_listings(request):
-    context = {}
-    all_listings = Listing.objects.all()
-    context['listings'] = all_listings
-    return render(request, 'shoptaki/listings.html', context)
-
-
 def get_results(request):
+    Analytics.objects.all().delete()
     context = {}
     if request.method == "POST":
         form = request.POST
@@ -203,7 +199,16 @@ def get_results(request):
         for listing in all_listings:
             if listing.price <= current_savings:
                 result_listings.append(listing)
+        form_data = Analytics(
+            cap_rate=Decimal(form['cap_rate']),
+            loan_to_value = Decimal(form['loan_to_value']),
+            current_savings = Decimal(form['current_savings']),
+            interest_rate = Decimal(form['interest_rate']),
+            amort_sched = Decimal(form['amort_sched']),
+        )
+        form_data.save()
         context['listings'] = result_listings
+        context['analytics'] = form_data
         return render(request, 'shoptaki/listings.html', context)
 
     else:
