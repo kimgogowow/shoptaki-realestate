@@ -276,3 +276,27 @@ header {
 #listing_title {
     text-align: center;
 }
+
+
+
+#cap_rate-info-icon{
+
+}
+#container_cap_rate,
+#container_loan_to_value,
+#container_current_savings,
+#container_interest_rate,
+#container_amort_sched {
+    display: none;
+    z-index: 1;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    position: absolute;
+}
+
+
+
+.info-icon {
+    width: 20px;
+}
