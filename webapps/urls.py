@@ -27,10 +27,10 @@ urlpatterns = [
     path('register', views.register_action, name="register"),
     path('logout', views.logout_action, name="logout"),
     path('finder_type', views.finder_type_action, name="finder_type"),
-    path('finder', views.finder_action, name="finder"),
+    path('finder', views.get_results, name="finder"),
     path('favorites', views.check_favorites, name="favorites"),
     path('profile', views.user_profile_action, name="profile"),
-    path('listings', views.get_listings, name="listings"),
     path('listing/<str:listing_address>/', views.listing, name='listing'),
+    path('results', views.get_results, name='results'),
     path('refresh_listings', views.refresh_listings, name="refresh_listings"),#API CALL USE SPARINGLY
 ]

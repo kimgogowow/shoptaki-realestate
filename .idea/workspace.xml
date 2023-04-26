@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/static/shoptaki/listings.css" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/static/shoptaki/listings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/templates/shoptaki/listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/templates/shoptaki/listing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/templates/shoptaki/listings.html" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/templates/shoptaki/listings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/templates/shoptaki/results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapps/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -23,25 +31,25 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Oq7oTTv2lnhFRt4tarOrTLJWLo" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/simranvirdi/Desktop/shoptaki-realestate1/shoptaki/data&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "/Users/simranvirdi/Desktop/shoptaki-realestate1/shoptaki/data",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/shoptaki/data" />
@@ -141,21 +149,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="shoptaki-realestate" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
       <module name="shoptaki-realestate1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,14 +182,25 @@
       <workItem from="1682277644864" duration="97000" />
       <workItem from="1682277771503" duration="32000" />
       <workItem from="1682277829601" duration="5156000" />
-      <workItem from="1682369608942" duration="7123000" />
-      <workItem from="1682450357632" duration="2610000" />
-      <workItem from="1682462456853" duration="855000" />
+      <workItem from="1682435894019" duration="198000" />
+      <workItem from="1682441132434" duration="1421000" />
+      <workItem from="1682483576267" duration="15060000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
