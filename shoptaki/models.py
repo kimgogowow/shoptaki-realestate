@@ -14,7 +14,7 @@ class Listing(models.Model):
     bedrooms = models.IntegerField(default=-1)
     bathrooms = models.DecimalField(max_digits=7, decimal_places=2, default=-1)
     sqft = models.DecimalField(max_digits=20, decimal_places=2, default =-1)
-    lot_size = models.DecimalField(max_digits=20, decimal_places=5, default =-1)
+    lot_size = models.DecimalField(max_digits=20, decimal_places=2, default =-1)
     days_listed = models.IntegerField(default=-1)
     longitude = models.DecimalField(max_digits=12, decimal_places=9, default=-1)
     latitude = models.DecimalField(max_digits=12, decimal_places=9, default=-1)

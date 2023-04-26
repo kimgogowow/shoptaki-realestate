@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2eeaa755-8aa7-4de9-aa24-bbb2fc9d8b84" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shoptaki/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoptaki/static/shoptaki/listings.css" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/static/shoptaki/listings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoptaki/static/shoptaki/shoptaki.css" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/static/shoptaki/shoptaki.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shoptaki/templates/shoptaki/listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/templates/shoptaki/listing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoptaki/templates/shoptaki/listings.html" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/templates/shoptaki/listings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoptaki/templates/shoptaki/results.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shoptaki/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoptaki/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapps/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/webapps/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "/Users/simranvirdi/Desktop/shoptaki-realestate1/shoptaki/data",
@@ -184,7 +183,10 @@
       <workItem from="1682277829601" duration="5156000" />
       <workItem from="1682435894019" duration="198000" />
       <workItem from="1682441132434" duration="1421000" />
-      <workItem from="1682483576267" duration="15060000" />
+      <workItem from="1682483576267" duration="17036000" />
+      <workItem from="1682543033391" duration="1769000" />
+      <workItem from="1682544855627" duration="2396000" />
+      <workItem from="1682547267226" duration="2354000" />
     </task>
     <servers />
   </component>

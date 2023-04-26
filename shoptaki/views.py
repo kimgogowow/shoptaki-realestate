@@ -216,7 +216,7 @@ def refresh_listings(request):
             bedrooms=i.get('bedrooms', -1),
             bathrooms=i.get('bathrooms', -1),
             sqft=i.get('livingArea', -1),
-            lot_size=i.get('lotAreaValue', -1),
+            lot_size=i.get('lotAreaValue', -1).quantize(decimal.Decimal('.01')),
             days_listed=i.get('daysOnZillow', -1),
             longitude=i.get('longitude', -1),
             latitude=i.get('latitude', -1),
