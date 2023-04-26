@@ -33,3 +33,20 @@ class Analytics(models.Model):
     amort_sched = models.IntegerField()
     def __str__(self):
         return self.title
+
+class ListingAnalytics(models.Model):
+    noi = models.DecimalField(max_digits=10, decimal_places=2, default=-1)
+    monthly_noi = models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    p_interest = models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    p_fcf= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    p_cashoncash= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    p_debtyield= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    p_debtconstant= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    pandi_principal= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    pandi_interest= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    pandi_fcf= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    pandi_cashoncash= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    pandi_debtyield= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    pandi_debtconstant= models.DecimalField(max_digits=12, decimal_places=2, default=-1)
+    def __str__(self):
+        return self.title

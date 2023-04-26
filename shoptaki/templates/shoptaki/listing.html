@@ -1,6 +1,4 @@
 {% extends "shoptaki/base.html" %}
-
-
 {% block content %}
 <section id="showcase-inner" class="py-5 text-black">
     <div class="container">
@@ -101,11 +99,71 @@
                                 <i class="fas fa-calendar"></i> Days Listed
                                 <span class="float-right">{{ listing.days_listed}}</span>
                             </li>
-
-
                         </ul>
                     </div>
                 </div>
+
+                <div class="row mb-5 fields">
+                    <div class="col-md-6">
+                        <h5 class="card-title">Interest Only Scenario</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-money-bill-alt"></i> Principal:
+                                <span class="float-right">$0</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bed"></i> Interest:
+                                <span class="float-right">${{ listing_info.p_interest }}</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Free Cash Flow:
+                                <span class="float-right">${{ listing_info.p_fcf }}</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Cash on Cash:
+                                <span class="float-right">{{ listing_info.p_cashoncash }}%</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Debt Yield:
+                                <span class="float-right">{{ listing_info.p_debtyield }}%</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Debt Constant:
+                                <span class="float-right">{{ listing_info.p_debtconstant }}%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="card-title">Principal and Interest Only Scenario</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-money-bill-alt"></i> Principal:
+                                <span class="float-right">${{ listing_info.pandi_principal}}</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bed"></i> Interest:
+                                <span class="float-right">${{ listing_info.pandi_interest }}</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Free Cash Flow:
+                                <span class="float-right">${{ listing_info.pandi_fcf }}</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Cash on Cash:
+                                <span class="float-right">{{ listing_info.pandi_cashoncash }}%</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Debt Yield:
+                                <span class="float-right">{{ listing_info.pandi_debtyield }}%</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bath"></i> Debt Constant:
+                                <span class="float-right">{{ listing_info.pandi_debtconstant }}%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
 
                 <!-- Description -->
                 <div class="row mb-5">
@@ -116,7 +174,6 @@
             </div>
             <div class="col-md-3">
                 <div class="card mb-3">
-                    <img class="card-img-top" src="{{ listing.realtor.photo.url }}" alt="">
                     <div class="card-body">
                         <h5 class="card-title">Personal Metrics</h5>
                         <h6 class="text-secondary">Cap Rate {{ analytics.cap_rate }}%</h6>
@@ -124,6 +181,8 @@
                         <h6 class="text-secondary">Current Savings: ${{ analytics.current_savings}}</h6>
                         <h6 class="text-secondary">Interest Rate: {{ analytics.interest_rate}}%</h6>
                         <h6 class="text-secondary">Amortization Schedule: {{ analytics.amort_sched}} years</h6>
+                        <h6 class="text-secondary">NOI: ${{ listing_info.noi}} </h6>
+                        <h6 class="text-secondary">Monthly NOI: ${{ listing_info.monthly_noi}} </h6>
                     </div>
                 </div>
                 <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Make An Inquiry</button>

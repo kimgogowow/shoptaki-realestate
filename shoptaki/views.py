@@ -1,3 +1,6 @@
+import decimal
+import numpy as np
+import numpy_financial as npf
 from decimal import Decimal
 
 from django.http import HttpResponseRedirect
@@ -9,10 +12,11 @@ from django.contrib.auth import authenticate, login, logout
 # from django.utils import timezone
 from django.conf import settings
 from .forms import LoginForm, RegisterForm, FinderForm
-from .models import Listing, Analytics
+from .models import Listing, Analytics, ListingAnalytics
 from .listing import import_listings_from_csv
 import requests
 from django.shortcuts import get_object_or_404, render
+
 
 
 # Create your views here.
@@ -140,8 +144,45 @@ def listing(request, listing_address):
     if request.method == "GET":
         listing = get_object_or_404(Listing, address=listing_address)
         analytics = Analytics.objects.first()
+        loan_to_val = analytics.loan_to_value*0.01
+        cap_rate = analytics.cap_rate * 0.01
+        interest_rate = analytics.interest_rate*0.01
+        loan_amount = listing.price * decimal.Decimal(loan_to_val)
+        cash_invested = listing.price - loan_amount
+        noi = listing.price * decimal.Decimal(cap_rate)
+        p_interest = loan_amount * decimal.Decimal(interest_rate)
+        p_fcf = noi - p_interest
+        per = np.arange(1*12) + 1
+        payment_per_month = np.repeat(abs(npf.pmt(decimal.Decimal(interest_rate)/12, 20*12, decimal.Decimal(loan_amount))), 12)
+        interest_per_month = abs(npf.ipmt(decimal.Decimal(interest_rate)/12,per, 20*12, loan_amount))
+        principal_per_month = np.subtract(payment_per_month, interest_per_month)
+        principal_pandi = round(np.sum(principal_per_month),2)
+        interest_pandi = round(np.sum(interest_per_month), 2)
+        free_cash_flow_pandi = round(decimal.Decimal(noi) - decimal.Decimal(interest_pandi) - decimal.Decimal(principal_pandi), 2)
+        cash_on_cash_pandi = round((decimal.Decimal(free_cash_flow_pandi)/decimal.Decimal(cash_invested)) * 100, 2)
+        debt_yield_pandi = round((decimal.Decimal(noi)/decimal.Decimal(loan_amount)) * 100, 2)
+        debt_constant_pandi = round(((decimal.Decimal(interest_pandi)+decimal.Decimal(principal_pandi))/decimal.Decimal(loan_amount)) * 100, 2)
+
+        listing_info = ListingAnalytics(
+            noi=noi.quantize(decimal.Decimal('.01')),
+            monthly_noi= (noi / 12).quantize(decimal.Decimal('.01')),
+            p_interest=p_interest.quantize(decimal.Decimal('.01')),
+            p_fcf=p_fcf.quantize(decimal.Decimal('.01')),
+            p_cashoncash=((p_fcf/cash_invested)*100).quantize(decimal.Decimal('.01')),
+            p_debtyield=((noi/loan_amount)*100).quantize(decimal.Decimal('.01')),
+            p_debtconstant=((p_interest/loan_amount)*100).quantize(decimal.Decimal('.01')),
+            pandi_principal=principal_pandi,
+            pandi_interest=interest_pandi,
+            pandi_fcf=free_cash_flow_pandi,
+            pandi_cashoncash=cash_on_cash_pandi,
+            pandi_debtyield=debt_yield_pandi,
+            pandi_debtconstant=debt_constant_pandi
+
+        )
         context['listing'] = listing
         context['analytics'] = analytics
+        context['listing_info'] = listing_info
+
         return render(request, 'shoptaki/listing.html', context)
 
 
