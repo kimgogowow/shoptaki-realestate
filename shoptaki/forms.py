@@ -26,8 +26,7 @@ class FinderForm(forms.Form):
     loan_to_value = forms.CharField(
             max_length=20,
             label="Loan To Value")
-    current_savings = forms.CharField(
-                max_length=20,
+    current_savings = forms.IntegerField(
                 label="Current Savings")
     interest_rate = forms.CharField(
                     max_length=20,
@@ -35,6 +34,9 @@ class FinderForm(forms.Form):
     amort_sched = forms.CharField(
                         max_length=20,
                         label="Amortization Schedule")
+
+
+
 
     def clean(self):
         cleaned_data = super().clean()

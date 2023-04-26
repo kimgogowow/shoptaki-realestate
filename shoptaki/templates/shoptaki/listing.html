@@ -1,6 +1,5 @@
 {% extends "shoptaki/base.html" %}
 
-{% block title %} | {{ listing.title }} {% endblock %}
 
 {% block content %}
 <section id="showcase-inner" class="py-5 text-black">
@@ -23,7 +22,7 @@
         <div class="row">
             <div class="col-md-9">
                 <!-- Home Main Image -->
-                <img src="{{ listing.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
+                <img src="{{ listing.img }}" alt="" class="img-main img-fluid mb-3">
                 <!-- Thumbnails -->
                 <div class="row mb-5 thumbs">
                     {% if listing.photo_1 %}
@@ -104,8 +103,8 @@
                   </span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-calendar"></i> Listing Date:
-                                <span class="float-right">{{ listing.list_date }}</span>
+                                <i class="fas fa-calendar"></i> Days Listed
+                                <span class="float-right">{{ listing.days_listed}}</span>
                             </li>
                             <li class="list-group-item text-secondary">
                                 <i class="fas fa-bed"></i> Realtor:
