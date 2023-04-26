@@ -24,6 +24,14 @@
             <td>{{ field.label_tag }}</td>
 
             <td>{{ field }}</td>
+            {% if field.name == 'cap_rate' or field.name == 'loan_to_value' or field.name == 'interest_rate' %}
+            <td> %</td>
+            {% endif %}
+            {% if field.name == 'amort_sched' %}
+            <td> years</td>
+            {% endif %}
+
+
           </tr>
           {% endfor %}
         </table>
@@ -56,7 +64,9 @@
     investment opportunities.
   </div>
   <div id="container_loan_to_value">
-    Amount of the loan you can invest in the property.
+    The loan-to-value (LTV) ratio is an assessment of lending risk that financial institutions and other lenders examine
+    before approving a mortgage. Typically, loan assessments with high LTV ratios are considered higher-risk loans.
+    Therefore, if the mortgage is approved, the loan has a higher interest rate.
   </div>
   <div id="container_current_savings">
     Amount that you have now to invest in any property.
@@ -65,7 +75,6 @@
     In a mortgage, the interest rate is the cost of borrowing money from a lender to purchase a home or property. It
     is the percentage of the loan amount that the borrower will pay back to the lender as interest over the life of
     the loan.
-
   </div>
   <div id="container_amort_sched">
     Time you wish to invest on this property.
