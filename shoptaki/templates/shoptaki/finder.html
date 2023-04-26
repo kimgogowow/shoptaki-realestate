@@ -3,14 +3,46 @@
 <div class="finder_search_body">
 
 
-    <h1>you are looking for a <a>{{type}}</a> house</h1>
+  <h1>you are looking for a <a>{{type}}</a> house</h1>
 
-    <h2 class=" finder_title">
-        Property Finder:</h2>
+  <h2 class=" finder_title">
+    Property Finder:</h2>
 
-    <h1>{{error}}</h1>
+  <h1>{{error}}</h1>
 
-    <div class="search_input">
+
+  <div class="search_input">
+    <div class="finder_form">
+      <form method="post" action="{% url 'finder' %}">
+        <table>
+          {% for field in form %}
+          <tr>
+            <td>
+              <img src="https://s2.loli.net/2023/04/23/u5oGswr9Ahxzk4V.png" class="info-icon"
+                id="{{ field.name }}-info-icon" alt="Info icon" title="{{ field.help_text }}">
+            </td>
+            <td>{{ field.label_tag }}</td>
+
+            <td>{{ field }}</td>
+            {% if field.name == 'cap_rate' or field.name == 'loan_to_value' or field.name == 'interest_rate' %}
+            <td> %</td>
+            {% endif %}
+            {% if field.name == 'amort_sched' %}
+            <td> years</td>
+            {% endif %}
+
+
+          </tr>
+          {% endfor %}
+        </table>
+        {% csrf_token %}
+        <br>
+        <button class="button" id="id_finder_button" type="submit">View Listings</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- <div class="search_input">
         <div class="finder_form">
             <form method="post" action="/results">
                 <table>
@@ -21,7 +53,32 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
-    </div>
+    </div> -->
+
+
+  <div id="container_cap_rate">
+    Cap rate is expressed as a percentage and represents the rate of return an investor can expect to receive on
+    their investment in the property. The higher the cap rate, the higher the potential return, but it also
+    indicates a higher level of risk. Conversely, a lower cap rate indicates a lower potential return, but also a
+    lower level of risk. Cap rate is often used as a benchmark to compare the value of different real estate
+    investment opportunities.
+  </div>
+  <div id="container_loan_to_value">
+    The loan-to-value (LTV) ratio is an assessment of lending risk that financial institutions and other lenders examine
+    before approving a mortgage. Typically, loan assessments with high LTV ratios are considered higher-risk loans.
+    Therefore, if the mortgage is approved, the loan has a higher interest rate.
+  </div>
+  <div id="container_current_savings">
+    Amount that you have now to invest in any property.
+  </div>
+  <div id="container_interest_rate">
+    In a mortgage, the interest rate is the cost of borrowing money from a lender to purchase a home or property. It
+    is the percentage of the loan amount that the borrower will pay back to the lender as interest over the life of
+    the loan.
+  </div>
+  <div id="container_amort_sched">
+    Time you wish to invest on this property.
+  </div>
 </div>
 
 {% endblock %}

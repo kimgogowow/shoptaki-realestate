@@ -1,4 +1,5 @@
-{% extends "shoptaki/base.html" %}
+{% extends "shoptaki/base_for_listings.html" %}
+
 {% block content %}
 <section id="showcase-inner" class="py-5 text-black">
     <div class="container">
@@ -6,7 +7,8 @@
             <div class="col-md-12">
                 <h1 lass="fas fa-map-marker">{{ listing.address }}</h1>
                 <p class="lead">
-                    <i class="fas fa-map-marker"></i> {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}</p>
+                    <i class="fas fa-map-marker"></i> {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}
+                </p>
             </div>
         </div>
     </div>
@@ -93,11 +95,16 @@
                             <li class="list-group-item text-secondary">
                                 <i class="fas fa-square"></i> Lot Size:
                                 <span class="float-right">{{ listing.lot_size }} Acres
-                  </span>
+                                </span>
                             </li>
                             <li class="list-group-item text-secondary">
-                                <i class="fas fa-calendar"></i> Days Listed
-                                <span class="float-right">{{ listing.days_listed}}</span>
+                                <i class="fas fa-calendar"></i> Listing Date:
+                                <span class="float-right">{{ listing.list_date }}</span>
+                            </li>
+                            <li class="list-group-item text-secondary">
+                                <i class="fas fa-bed"></i> Realtor:
+                                <span class="float-right">{{ listing.realtor }}
+                  </span>
                             </li>
                         </ul>
                     </div>
@@ -185,7 +192,8 @@
                         <h6 class="text-secondary">Monthly NOI: ${{ listing_info.monthly_noi}} </h6>
                     </div>
                 </div>
-                <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Make An Inquiry</button>
+                <button class="btn-primary btn-block btn-lg" data-toggle="modal" data-target="#inquiryModal">Make An
+                    Inquiry</button>
             </div>
         </div>
     </div>
