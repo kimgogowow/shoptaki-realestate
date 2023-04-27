@@ -11,19 +11,6 @@
 
 <!-- Listings -->
 <section id="listings" class="py-4">
-    <div class="row">
-        <h4 class="text-primary">Cap Rate: {{ analytics.cap_rate }}</h4>
-        <br>
-        <h4 class="text-primary">Loan To Value: {{ analytics.loan_to_val}}%</h4>
-        <br>
-        <h4 class="text-primary">Current Savings: ${{ analytics.current_savings}}</h4>
-        <br>
-        <h4 class="text-primary">Interest Rate: {{ analytics.interest_rate}}%</h4>
-        <br>
-        <h4 class="text-primary">Amortization Schedule: {{ analytics.amort_sched}} years</h4>
-
-
-    </div>
     <div class="listings_container">
         <div class="row">
             {% if listings %}
