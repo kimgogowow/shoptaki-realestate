@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	{% load static %}
+	<script src="https://apis.google.com/js/api.js"></script>
 	<script src="{% static '/shoptaki/shoptaki.js' %}" type="text/javascript"></script>
 	<link href="{% static '/shoptaki/shoptaki.css' %}" rel="stylesheet" type="text/css">
 	<title> {% block title %} Shoptaki-real estate {% endblock %} </title>
@@ -27,7 +28,7 @@
 
 
 		{% if user.is_authenticated %}
-		<div>
+		<div id="user_pic">
 			<img style="height:70px;border-radius: 50%;" src="{{pic}}">
 		</div>
 		{% else %}
@@ -45,3 +46,19 @@
 </body>
 
 </html>
+
+<div id="profile-picture"></div>
+
+
+<!--
+
+	def home_view(request):
+
+    # context = {}
+    # if request.method == 'GET':
+    #    pic = request.user.social_auth.get(
+    #        provider='google-oauth2').extra_data['picture']
+    #    context['pic'] = pic
+    return render(request, 'shoptaki/home.html')
+
+-->

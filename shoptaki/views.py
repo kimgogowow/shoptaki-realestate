@@ -30,19 +30,14 @@ from django.contrib.auth.decorators import login_required
     return render(request, 'shoptaki/base.html', context)
  """
 
+
 def home_view(request):
     context = {}
-    if request.method == 'GET':
+    if request.user.is_authenticated:
         pic = request.user.social_auth.get(
             provider='google-oauth2').extra_data['picture']
         context['pic'] = pic
-
-    # context = {}
-    # if request.method == 'GET':
-    #    pic = request.user.social_auth.get(
-    #        provider='google-oauth2').extra_data['picture']
-    #    context['pic'] = pic
-    return render(request, 'shoptaki/home.html', context)
+    return render(request, 'shoptaki/home.html', context=context)
 
 
 def info_view(request):
@@ -138,9 +133,6 @@ def finder_action(request):
 def user_profile_action(request):
     context = {}
     if request.method == "GET":
-        pic = request.user.social_auth.get(
-            provider='google-oauth2').extra_data['picture']
-        context['pic'] = pic
         return render(request, 'shoptaki/profile.html', context)
 
 
