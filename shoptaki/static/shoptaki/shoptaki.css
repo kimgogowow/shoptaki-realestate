@@ -49,6 +49,7 @@ header {
     font-family: 'Lato';
     text-transform: uppercase;
 }
+
 .nav-links a {
     color: #0d0d0d;
     text-decoration: none;
@@ -279,8 +280,65 @@ header {
 }
 
 
+#container_cap_rate,
+#container_loan_to_value,
+#container_current_savings,
+#container_interest_rate,
+#container_amort_sched {
+    display: none;
+    /* Hide all containers by default */
+    position: absolute;
+    /* Position the containers absolutely */
+    top: 10%;
+    /* Position the containers below the icons */
+    left: 10%;
+    z-index: 1;
+    /* Ensure the containers appear on top of other elements */
+    width: 400px;
+    border-radius: 10px;
+    border-width: 2px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
 
-#cap_rate-info-icon {}
+
+
+
+}
+
+#cap_rate-info-icon:hover+#container_cap_rate,
+#loan_to_value-info-icon:hover+#container_loan_to_value,
+#current_savings-info-icon:hover+#container_current_savings,
+#interest_rate-info-icon:hover+#container_interest_rate,
+#amort_sched-info-icon:hover+#container_amort_sched {
+    display: block;
+    /* Display the corresponding container on hover */
+}
+
+#terms {
+    text-align: left;
+}
+
+/*control the size of the info icon*/
+.info-icon {
+    width: 20px;
+}
+
+#stress_term {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700px;
+}
+
+/*
+
+
+#cap_rate-info-icon:hover+#container_cap_rate,
+#loan_to_value-info-icon:hover+#container_loan_to_value,
+#current_savings-info-icon:hover+#container_current_savings,
+#interest_rate-info-icon:hover+#container_interest_rate,
+#amort_sched-info-icon:hover+#container_amort_sched {
+    display: block;
+}
 
 
 #container_cap_rate,
@@ -295,9 +353,4 @@ header {
     padding: 10px;
     position: absolute;
 }
-
-
-
-.info-icon {
-    width: 20px;
-}
+*/

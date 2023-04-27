@@ -132,8 +132,12 @@ def finder_action(request):
 @login_required
 def user_profile_action(request):
     context = {}
-    if request.method == "GET":
-        return render(request, 'shoptaki/profile.html', context)
+    if request.user.is_authenticated:
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
+
+    return render(request, 'shoptaki/profile.html', context)
 
 
 # def listings(request):

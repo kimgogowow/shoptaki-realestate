@@ -15,7 +15,10 @@
 {% block content %}
 <div class="profile_body">
     <div id="profile_pic" style="text-align:center">
-        <img id="id_user_picture" style="align-items: center;align-self: center;" src="{{pic}}" />
+        <img id="id_user_picture" style="max-width: 100%;
+            max-height: 100%;
+            align-items: center;
+            align-self: center;" src="{{pic}}" />
     </div>
     <div id="profile_info">
 
@@ -57,6 +60,6 @@
 
 </div>
 <script>
-    
+
 </script>
 {% endblock %}
