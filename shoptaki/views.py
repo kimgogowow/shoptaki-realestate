@@ -21,12 +21,27 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
+""" def _pic_check(action_function):
+    context = {}
+    if request.method == 'GET':
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
+    return render(request, 'shoptaki/base.html', context)
+ """
+
 def home_view(request):
     context = {}
     if request.method == 'GET':
         pic = request.user.social_auth.get(
             provider='google-oauth2').extra_data['picture']
         context['pic'] = pic
+
+    # context = {}
+    # if request.method == 'GET':
+    #    pic = request.user.social_auth.get(
+    #        provider='google-oauth2').extra_data['picture']
+    #    context['pic'] = pic
     return render(request, 'shoptaki/home.html', context)
 
 
@@ -123,6 +138,9 @@ def finder_action(request):
 def user_profile_action(request):
     context = {}
     if request.method == "GET":
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
         return render(request, 'shoptaki/profile.html', context)
 
 

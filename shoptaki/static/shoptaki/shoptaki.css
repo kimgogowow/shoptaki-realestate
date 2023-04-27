@@ -126,17 +126,10 @@ header {
 .profile_body {
 
     display: flex;
-
-
-    border-style: solid;
-    border-color: #0d0d0d;
-    border-width: 2px;
 }
 
 #profile_pic {
-    border-style: solid;
-    border-color: #0d0d0d;
-    border-width: 2px;
+
 
     flex-grow: 1;
     text-align: center;
@@ -279,9 +272,7 @@ header {
 
 
 
-#cap_rate-info-icon{
-
-}
+#cap_rate-info-icon {}
 
 
 #container_cap_rate,
