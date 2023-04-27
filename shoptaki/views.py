@@ -103,12 +103,23 @@ def logout_action(request):
 @login_required
 def finder_type_action(request):
     context = {"type": request.POST}
+    if request.user.is_authenticated:
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
+
     if request.method == "GET":
         return render(request, 'shoptaki/finder_type.html', context)
 
 
 def finder_action(request):
     context = {}
+    '''
+    if request.user.is_authenticated:
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
+        '''
 
     if request.method == 'GET':
         type = request.GET.get('type')
@@ -149,6 +160,12 @@ def user_profile_action(request):
 @login_required
 def listings(request):
     context = {}
+
+    if request.user.is_authenticated:
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
+
     if request.method == "GET":
         # Call import_listings_from_csv function to import listings from CSV
         import_listings_from_csv('shoptaki/data/listings.csv')

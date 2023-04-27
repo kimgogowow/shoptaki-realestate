@@ -18,8 +18,12 @@
 		<div class="nav-links">
 			<a href="{% url 'home' %}">Home</a>
 			<a href="{% url 'finder_type' %}">Finder</a>
+			
+			<!--
 			<a href="{% url 'profile' %}">Profile</a>
 			<a href="{% url 'favorites' %}">Favorites</a>
+			-->
+
 			{% if user.is_authenticated %}
 			<a href="{% url 'logout' %}" id="logout_button">Logout</a>
 			{% endif %}
