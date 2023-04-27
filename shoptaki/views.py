@@ -16,14 +16,33 @@ from .models import Listing, Analytics, ListingAnalytics
 from .listing import import_listings_from_csv
 import requests
 from django.shortcuts import get_object_or_404, render
-
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
+""" def _pic_check(action_function):
+    context = {}
+    if request.method == 'GET':
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
+    return render(request, 'shoptaki/base.html', context)
+ """
+
 def home_view(request):
-    return render(request, 'shoptaki/home.html')
+    context = {}
+    if request.method == 'GET':
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
+
+    # context = {}
+    # if request.method == 'GET':
+    #    pic = request.user.social_auth.get(
+    #        provider='google-oauth2').extra_data['picture']
+    #    context['pic'] = pic
+    return render(request, 'shoptaki/home.html', context)
 
 
 def info_view(request):
@@ -119,6 +138,9 @@ def finder_action(request):
 def user_profile_action(request):
     context = {}
     if request.method == "GET":
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
         return render(request, 'shoptaki/profile.html', context)
 
 
@@ -153,24 +175,34 @@ def listing(request, listing_address):
         p_interest = loan_amount * decimal.Decimal(interest_rate)
         p_fcf = noi - p_interest
         per = np.arange(1*12) + 1
-        payment_per_month = np.repeat(abs(npf.pmt(decimal.Decimal(interest_rate)/12, 20*12, decimal.Decimal(loan_amount))), 12)
-        interest_per_month = abs(npf.ipmt(decimal.Decimal(interest_rate)/12,per, 20*12, loan_amount))
-        principal_per_month = np.subtract(payment_per_month, interest_per_month)
-        principal_pandi = round(np.sum(principal_per_month),2)
+        payment_per_month = np.repeat(abs(npf.pmt(decimal.Decimal(
+            interest_rate)/12, 20*12, decimal.Decimal(loan_amount))), 12)
+        interest_per_month = abs(npf.ipmt(decimal.Decimal(
+            interest_rate)/12, per, 20*12, loan_amount))
+        principal_per_month = np.subtract(
+            payment_per_month, interest_per_month)
+        principal_pandi = round(np.sum(principal_per_month), 2)
         interest_pandi = round(np.sum(interest_per_month), 2)
-        free_cash_flow_pandi = round(decimal.Decimal(noi) - decimal.Decimal(interest_pandi) - decimal.Decimal(principal_pandi), 2)
-        cash_on_cash_pandi = round((decimal.Decimal(free_cash_flow_pandi)/decimal.Decimal(cash_invested)) * 100, 2)
-        debt_yield_pandi = round((decimal.Decimal(noi)/decimal.Decimal(loan_amount)) * 100, 2)
-        debt_constant_pandi = round(((decimal.Decimal(interest_pandi)+decimal.Decimal(principal_pandi))/decimal.Decimal(loan_amount)) * 100, 2)
+        free_cash_flow_pandi = round(decimal.Decimal(
+            noi) - decimal.Decimal(interest_pandi) - decimal.Decimal(principal_pandi), 2)
+        cash_on_cash_pandi = round(
+            (decimal.Decimal(free_cash_flow_pandi)/decimal.Decimal(cash_invested)) * 100, 2)
+        debt_yield_pandi = round(
+            (decimal.Decimal(noi)/decimal.Decimal(loan_amount)) * 100, 2)
+        debt_constant_pandi = round(((decimal.Decimal(
+            interest_pandi)+decimal.Decimal(principal_pandi))/decimal.Decimal(loan_amount)) * 100, 2)
 
         listing_info = ListingAnalytics(
             noi=noi.quantize(decimal.Decimal('.01')),
-            monthly_noi= (noi / 12).quantize(decimal.Decimal('.01')),
+            monthly_noi=(noi / 12).quantize(decimal.Decimal('.01')),
             p_interest=p_interest.quantize(decimal.Decimal('.01')),
             p_fcf=p_fcf.quantize(decimal.Decimal('.01')),
-            p_cashoncash=((p_fcf/cash_invested)*100).quantize(decimal.Decimal('.01')),
-            p_debtyield=((noi/loan_amount)*100).quantize(decimal.Decimal('.01')),
-            p_debtconstant=((p_interest/loan_amount)*100).quantize(decimal.Decimal('.01')),
+            p_cashoncash=((p_fcf/cash_invested) *
+                          100).quantize(decimal.Decimal('.01')),
+            p_debtyield=((noi/loan_amount) *
+                         100).quantize(decimal.Decimal('.01')),
+            p_debtconstant=((p_interest/loan_amount) *
+                            100).quantize(decimal.Decimal('.01')),
             pandi_principal=principal_pandi,
             pandi_interest=interest_pandi,
             pandi_fcf=free_cash_flow_pandi,
@@ -197,7 +229,8 @@ def refresh_listings(request):
     Listing.objects.all().delete()
     context = {}
     url = "https://zillow56.p.rapidapi.com/search"
-    querystring = {"location": "pittsburgh, pa", "status": "forSale", "isMultiFamily": "true"}
+    querystring = {"location": "pittsburgh, pa",
+                   "status": "forSale", "isMultiFamily": "true"}
     headers = {
         "content-type": "application/octet-stream",
         "X-RapidAPI-Key": "0376013f28msh9dfa0bf8473d107p1d88d2jsnc21f53b7bdca",
@@ -216,7 +249,8 @@ def refresh_listings(request):
             bedrooms=i.get('bedrooms', -1),
             bathrooms=i.get('bathrooms', -1),
             sqft=i.get('livingArea', -1),
-            lot_size=i.get('lotAreaValue', -1).quantize(decimal.Decimal('.01')),
+            lot_size=i.get('lotAreaValue', -
+                           1).quantize(decimal.Decimal('.01')),
             days_listed=i.get('daysOnZillow', -1),
             longitude=i.get('longitude', -1),
             latitude=i.get('latitude', -1),
@@ -242,10 +276,10 @@ def get_results(request):
                 result_listings.append(listing)
         form_data = Analytics(
             cap_rate=Decimal(form['cap_rate']),
-            loan_to_value = Decimal(form['loan_to_value']),
-            current_savings = Decimal(form['current_savings']),
-            interest_rate = Decimal(form['interest_rate']),
-            amort_sched = Decimal(form['amort_sched']),
+            loan_to_value=Decimal(form['loan_to_value']),
+            current_savings=Decimal(form['current_savings']),
+            interest_rate=Decimal(form['interest_rate']),
+            amort_sched=Decimal(form['amort_sched']),
         )
         form_data.save()
         context['listings'] = result_listings
@@ -255,4 +289,3 @@ def get_results(request):
     else:
         form = FinderForm()
     return render(request, "shoptaki/finder.html", {"form": form})
-
