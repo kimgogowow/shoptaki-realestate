@@ -11,19 +11,31 @@
 
 <!-- Listings -->
 <section id="listings" class="py-4">
-    <div class="row">
+    <hr>
+    <div class="row_header">
+
         <h4 class="text-primary">Cap Rate: {{ analytics.cap_rate }}</h4>
-        <br>
+        <a>|</a>
         <h4 class="text-primary">Loan To Value: {{ analytics.loan_to_val}}%</h4>
-        <br>
+        <br><a>|</a>
         <h4 class="text-primary">Current Savings: ${{ analytics.current_savings}}</h4>
-        <br>
+        <br><a>|</a>
         <h4 class="text-primary">Interest Rate: {{ analytics.interest_rate}}%</h4>
-        <br>
+        <br><a>|</a>
         <h4 class="text-primary">Amortization Schedule: {{ analytics.amort_sched}} years</h4>
 
 
+        <!--
+   <a>
+            Cap Rate: {{ analytics.cap_rate }}% || Loan To Value: {{ analytics.loan_to_val}} % || Current Savings: ${{
+            analytics.current_savings}} || Interest Rate: {{ analytics.interest_rate}}% || Amortization Schedule: {{
+            analytics.amort_sched}} years
+        </a>
+
+-->
+
     </div>
+    <hr>
     <div class="listings_container">
         <div class="row">
             {% if listings %}

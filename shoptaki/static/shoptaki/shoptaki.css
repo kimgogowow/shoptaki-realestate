@@ -5,6 +5,7 @@ body {
 }
 
 header {
+    background-color: #ccc;
     height: 50px;
     width: 100%;
     display: flex;
@@ -126,17 +127,13 @@ header {
 }
 
 .profile_body {
-
     display: flex;
 }
 
 #profile_pic {
 
-
     flex-grow: 1;
     text-align: center;
-
-
     max-width: 30%;
     max-height: 100%;
 
@@ -145,13 +142,10 @@ header {
 #id_user_picture {
     max-width: 100%;
     height: auto;
-
 }
 
 #profile_info {
     flex-grow: 3;
-
-
     display: flex;
     flex-direction: column;
 
@@ -245,15 +239,60 @@ header {
     display: flex;
     justify-content: center;
     padding: 20px;
-    font-size: 20px;
+    font-size: 30px;
+}
+
+.login_form label {
+    font-weight: 700px;
+    color: #0d0d0d;
+}
+
+.login_form input {
+    height: 40px;
+    border-radius: 5px;
 
 }
 
-.property_options button {
+.login_form {
 
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    flex-direction: column;
+    height: 400px;
+    background-image: url('/static/image/giphy.gif');
+    background-size: cover;
+    /* Scale the image to cover the entire body */
+    background-repeat: no-repeat;
+}
 
+.login_form table {
+    margin: 10px;
+
+}
+
+.login_form button {
     background-color: #3C64B1;
+    border-radius: 20px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
 
+    width: 200px;
+    height: 50px;
+
+    mix-blend-mode: normal;
+    backdrop-filter: blur(2px);
+    color: #fff;
+    font-family: 'Lucida Console';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.property_options button {
+    background-color: #3C64B1;
     border-radius: 20px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
@@ -327,6 +366,16 @@ header {
 #stress_term {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 700px;
+}
+
+.row_header {
+    margin: 5%;
+    justify-content: center;
+    padding: 1%;
+    border-radius: 5px;
+    border-color: #3C64B1;
+    border-width: 2px;
+    border-style: solid;
 }
 
 /*

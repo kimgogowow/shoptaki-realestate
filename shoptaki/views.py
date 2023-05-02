@@ -176,6 +176,12 @@ def listings(request):
 
 def listing(request, listing_address):
     context = {}
+
+    if request.user.is_authenticated:
+        pic = request.user.social_auth.get(
+            provider='google-oauth2').extra_data['picture']
+        context['pic'] = pic
+
     if request.method == "GET":
         listing = get_object_or_404(Listing, address=listing_address)
         analytics = Analytics.objects.first()

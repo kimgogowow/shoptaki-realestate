@@ -4,26 +4,32 @@
 <div class="login_body">
     <p class="login_title">Login</p>
     <div class="login_form">
+
         <form method="post" action="{% url 'login' %}">
+            <br>
+            <hr>
+            <br>
             <table>
                 {{form}}
             </table>
+            <hr>
             {% csrf_token %}
             <button class="button" id="id_login_button" type="submit">Submit</button>
         </form>
 
+        <div> <button type="button" id="id_register_button"
+                onclick="location.href='{% url 'register' %}'">Register</button>
+        </div>
+        <hr>
+        <br>
 
+        <div id="google_login">
+            Login with Google Account<br>
+            <a href="{{login_url}}">
+                    <img src="static/image/google_login.png" style="border-radius: 50%;width:80px;height:80px">
+            </a>
+        </div>
+    </div>
 
-    </div>
-    <div> <button type="button" id="id_register_button" onclick="location.href='{% url 'register' %}'">Register</button>
-    </div>
-    <span style="color:crimson">{{error_msg}}</span>
-    <br><br>
-    <div id="google_login">
-        Login with Google Account<br>
-        <a href="{{login_url}}">
-            <img src="static/image/google_login.png" style="width:80px;height:80px">
-        </a>
-    </div>
 </div>
 {% endblock %}
