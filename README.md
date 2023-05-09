@@ -1,27 +1,29 @@
-A real estate listings website built with python django bootstrap.
+# Shoptaki Real Estate with Django and OAuth2 Google Login
 
-A simple, reponsive website. Built with:
+Shoptaki Real Estate is a property search engine designed to help users find investment properties in Pittsburgh. This version of the program is built using Django and OAuth2 Google Login. It allows users to sign in to the application using their Google credentials and then input parameters such as their desired interest rate, current savings, and other financial indexes to filter and display a list of properties that meet their investment goals.
 
-Python 🐍
-Django 
+## Features
 
+- Simple and user-friendly interface
+- Secure login with OAuth2 Google authentication
+- Customizable search parameters based on financial goals
+- Displays detailed property information, including photos and pricing
+- Provides investment calculators to help users analyze potential investment returns
+- Allows users to save their favorite properties and compare them side-by-side
 
-process to track:
-Mar 27:
-1.home page+login page+register page
+## Getting Started
 
-  user story:
-  
-              1)the user will enter the home page once entered the website
-  
-              2)the right top will show the 'login' link if the user is not login
-              
-              3)replace the login link if the user login done with his/her user avatar
-              
-              4)new user can do registeration with the register button in the login page
-       
-  things to do further: the current avatar pic is limited to the fixed one, need to fix that later.
+To get started with Shoptaki Real Estate, you can clone this repository and run the program on your local machine. You will need to have Python 3 and Django installed, along with the required dependencies listed in the `requirements.txt` file.
 
-  all the static images are currently saved in https://sm.ms/
-  
- 2.pages added except: finder 2+finder listing + present page
+```sh
+git clone https://github.com/your-username/shoptaki-real-estate-django.git
+cd shoptaki-real-estate-django
+pip install -r requirements.txt
+python manage.py runserver
+```
+
+Once the Django development server is running, you can begin searching for investment properties by logging in with your Google credentials and entering your desired search parameters. You can also save properties to your favorites list or compare them side-by-side using the provided tools.
+
+## Contributing
+
+If you would like to contribute to Shoptaki Real Estate, feel free to submit a pull request with your suggested changes. Please make sure to thoroughly test any new features or changes before submitting your pull request.
