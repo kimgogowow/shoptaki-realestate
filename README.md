@@ -14,7 +14,9 @@ Shoptaki Real Estate is a property search engine designed to help users find inv
 ## Demo record
 
 <iframe src="https://drive.google.com/file/d/1WDZXp07MBiy8P7rs2rX13Ky0noP8xSgY/view?usp=share_link" width="640" height="480"></iframe>
-<a href="https://www.youtube.com/watch?v=VIDEO_ID"><img src="https://drive.google.com/file/d/1WDZXp07MBiy8P7rs2rX13Ky0noP8xSgY/view?usp=share_link" alt="Video thumbnail"></a>
+
+<a href="https://drive.google.com/file/d/1WDZXp07MBiy8P7rs2rX13Ky0noP8xSgY/view?usp=share_link"><img src="<img width="975" alt="image" src="https://github.com/kimgogowow/shoptaki-realestate/assets/100476425/aa691772-413f-4f04-b35a-662ed72c949d">
+" alt="Video thumbnail"></a>
 
 
 ## Getting Started
