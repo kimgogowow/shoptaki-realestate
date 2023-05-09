@@ -12,7 +12,9 @@ Shoptaki Real Estate is a property search engine designed to help users find inv
 - Allows users to save their favorite properties and compare them side-by-side
 
 ## Demo record
-https://drive.google.com/file/d/1WDZXp07MBiy8P7rs2rX13Ky0noP8xSgY/view?usp=share_link
+
+<iframe src="https://drive.google.com/file/d/1WDZXp07MBiy8P7rs2rX13Ky0noP8xSgY/view?usp=share_link" width="640" height="480"></iframe>
+
 
 ## Getting Started
 
