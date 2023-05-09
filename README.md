@@ -11,6 +11,9 @@ Shoptaki Real Estate is a property search engine designed to help users find inv
 - Provides investment calculators to help users analyze potential investment returns
 - Allows users to save their favorite properties and compare them side-by-side
 
+## Demo record
+https://drive.google.com/file/d/1WDZXp07MBiy8P7rs2rX13Ky0noP8xSgY/view?usp=share_link
+
 ## Getting Started
 
 To get started with Shoptaki Real Estate, you can clone this repository and run the program on your local machine. You will need to have Python 3 and Django installed, along with the required dependencies listed in the `requirements.txt` file.
